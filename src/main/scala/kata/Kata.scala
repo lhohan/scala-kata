@@ -22,6 +22,15 @@ object Kata {
   def fibFrom(a: Int, b:Int) : Stream[Int] = ???
 
 
+  /**
+   * Working with lists
+   **/
+
+  /**
+   * Kata:
+   * 99P1 implement last _not_ using list.last
+   **/
+  def last[A](list: List[A]): A = ???
 
 
 }

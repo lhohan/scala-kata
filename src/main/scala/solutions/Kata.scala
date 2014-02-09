@@ -8,7 +8,7 @@ object Kata {
    * Kata :
    * Implement factorial.
    **/
-  def factorial(n: Int): Int =  if(n <= 1) 1 else n * factorial(n-1)
+  def factorial(n: Int): Int = if (n <= 1) 1 else n * factorial(n - 1)
 
   /**
    * Kata :
@@ -17,7 +17,7 @@ object Kata {
   def factorialTailRec(n: Int): Int = {
 
     @tailrec
-    def factorialAcc(n:Int, acc:Int):Int = if (n <= 1) acc else factorialAcc(n-1, n * acc)
+    def factorialAcc(n: Int, acc: Int): Int = if (n <= 1) acc else factorialAcc(n - 1, n * acc)
 
     factorialAcc(n, 1)
   }
@@ -31,14 +31,31 @@ object Kata {
    * Kata :
    * Implement Fibonacci using a Stream.
    **/
-  def fibonacciStream(n :Int) = fibFrom(1,1).take(n).toList.last
-  def fibFrom(a: Int, b:Int) : Stream[Int] = a #:: fibFrom(b, a + b)
+  def fibonacciStream(n: Int) = fibFrom(1, 1).take(n).toList.last
+
+  def fibFrom(a: Int, b: Int): Stream[Int] = a #:: fibFrom(b, a + b)
 
   /**
    * Kata :
    * Implement factorial using Streams.
    **/
   def factorialStreams(n: Int): Int = ???
+
+
+  /**
+   * Working with lists
+   **/
+
+  /**
+   * Kata:
+   * 99P1 implement last _not_ using list.last
+   **/
+  def last[A](list: List[A]): A = list match {
+    case e :: Nil => e
+    case _ :: tail => last(tail)
+    case _ => throw new NoSuchElementException
+  }
+
 
   // TODO?
   /**

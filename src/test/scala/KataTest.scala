@@ -29,7 +29,14 @@ class KataTest extends FunSuite {
     assert(2 === fibonacciStream(3), "fibonacci stream 3")
     assert(13 === fibonacciStream(7), "fibonacci stream 7")
   }
-  
+
+  /**
+   * Lists
+   * */
+  test("last") {
+    assert(8 === last(List(1, 1, 2, 3, 5, 8)))
+  }
+
 //  test("factorial streams") {
 //    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
 //    assert (1 === factorialStreams(1), "factorial tailrec of '1'")
