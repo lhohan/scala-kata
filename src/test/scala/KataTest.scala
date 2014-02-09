@@ -23,4 +23,17 @@ class KataTest extends FunSuite {
     assert (720 === factorialTailRec(6), "factorial tailrec of '6'")
   }
 
+  test("Fibonacci Stream") {
+    assert(1 === fibonacciStream(1), "fibonacci stream 1")
+    assert(1 === fibonacciStream(2), "fibonacci stream 2")
+    assert(2 === fibonacciStream(3), "fibonacci stream 3")
+    assert(13 === fibonacciStream(7), "fibonacci stream 7")
+  }
+  
+//  test("factorial streams") {
+//    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
+//    assert (1 === factorialStreams(1), "factorial tailrec of '1'")
+//    assert (720 === factorialStreams(6), "factorial tailrec of '6'")
+//  }
+
 }

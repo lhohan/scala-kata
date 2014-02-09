@@ -22,6 +22,24 @@ object Kata {
     factorialAcc(n, 1)
   }
 
+
+  /**
+   * Streams
+   **/
+
+  /**
+   * Kata :
+   * Implement Fibonacci using a Stream.
+   **/
+  def fibonacciStream(n :Int) = fibFrom(1,1).take(n).toList.last
+  def fibFrom(a: Int, b:Int) : Stream[Int] = a #:: fibFrom(b, a + b)
+
+  /**
+   * Kata :
+   * Implement factorial using Streams.
+   **/
+  def factorialStreams(n: Int): Int = ???
+
   // TODO?
   /**
    * Kata: Fizzbuzz
