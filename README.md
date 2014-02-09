@@ -25,7 +25,7 @@ Pre-requisite: you will need to have [sbt](http://www.scala-sbt.org/) installed.
   * start 'sbt'
   * run '~test'
   * all tests will be failing --> make them pass :-)
-  * open up class Kata in src/main/scala in your favorite IDE or editor
+  * open up class kata.Kata in src/main/scala in your favorite IDE or editor
   * start implementing the methods
   * every time you switch to sbt you will see the current result of your passing and failing tests
   * to stop the sbt tests: just hit enter in sbt
