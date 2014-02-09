@@ -1,7 +1,9 @@
 scala-kata
 ==========
 
-Kata : practice coding by doing it repetitively. In this instance I want to practice Scala.
+Kata : practice coding by doing it repetitively. In this instance: keep on practicing Scala.
+
+Intention is to keep the kata small and short at first, very basic and below 30 min time in total so they can be performed regularly.
 
 
 If you want to read up on what kata are or why they may be interesting, check out for example:
