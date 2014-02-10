@@ -37,6 +37,10 @@ class KataTest extends FunSuite {
     assert(8 === last(List(1, 1, 2, 3, 5, 8)))
   }
 
+  test("penultimate") {
+    assert(5 === penultimate(List(1, 1, 2, 3, 5, 8)))
+  }
+
 //  test("factorial streams") {
 //    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
 //    assert (1 === factorialStreams(1), "factorial tailrec of '1'")

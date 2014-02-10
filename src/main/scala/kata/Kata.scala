@@ -32,5 +32,11 @@ object Kata {
    **/
   def last[A](list: List[A]): A = ???
 
+  /**
+   * Kata:
+   * 99P2 Find the last but one element of a list, _not_ using list.init.last
+   **/
+  def penultimate[A](list: List[A]): A = ???
+
 
 }

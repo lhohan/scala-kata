@@ -48,11 +48,21 @@ object Kata {
 
   /**
    * Kata:
-   * 99P1 implement last _not_ using list.last
+   * 99P1 Find the last but one element of a list, _not_ using list.last
    **/
   def last[A](list: List[A]): A = list match {
     case e :: Nil => e
     case _ :: tail => last(tail)
+    case _ => throw new NoSuchElementException
+  }
+
+  /**
+   * Kata:
+   * 99P2 Find the last but one element of a list, _not_ using list.init.last
+   **/
+  def penultimate[A](list: List[A]): A = list match {
+    case e :: _ :: Nil => e
+    case _ :: tail => penultimate(tail)
     case _ => throw new NoSuchElementException
   }
 
