@@ -39,7 +39,7 @@ object Kata {
 
   /**
    * Kata:
-   * P02 (*) Find the last but one element of a list,. (Try _not_ using list.init.last)
+   * P02 (*) Find the last but one element of a list. (Try _not_ using list.init.last)
    * Example:
    * scala> penultimate(List(1, 1, 2, 3, 5, 8))
    * res0: Int = 5
@@ -49,11 +49,12 @@ object Kata {
   /**
    * Kata:
    * P03 (*) Find the Kth element of a list.
-   * By convention, the first element in the list is element 0.
+   * By convention, the first element in the list is element 0. (Try not using build in nth.)
    * Example:
    *
-   * scala> nth(2, List(1, 1, 2, 3, 5, 8))
+   * scala> kth(2, List(1, 1, 2, 3, 5, 8))
    * res0: Int = 2
    **/
+  def kth[A](k: Int, list: List[A]): A = ???
 
 }

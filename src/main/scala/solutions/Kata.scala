@@ -1,6 +1,8 @@
 package solutions
 
 import scala.annotation.tailrec
+import java.util.NoSuchElementException
+import scala.NoSuchElementException
 
 object Kata {
 
@@ -64,6 +66,21 @@ object Kata {
     case e :: _ :: Nil => e
     case _ :: tail => penultimate(tail)
     case _ => throw new NoSuchElementException
+  }
+
+  /**
+   * Kata:
+   * P03 (*) Find the Kth element of a list.
+   * By convention, the first element in the list is element 0. (Try not using build in nth.)
+   * Example:
+   *
+   * scala> kth(2, List(1, 1, 2, 3, 5, 8))
+   * res0: Int = 2
+   **/
+  def kth[A](k: Int, list: List[A]): A = (k, list) match {
+    case (0, h :: _) => h
+    case (k, _ :: tail) => kth(k - 1, tail)
+    case (_, Nil) => throw new NoSuchElementException
   }
 
 
