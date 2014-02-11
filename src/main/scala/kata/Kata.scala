@@ -18,8 +18,9 @@ object Kata {
    * Kata :
    * Implement Fibonacci using a Stream.
    **/
-  def fibonacciStream(n :Int) = fibFrom(1,1).take(n).toList.last
-  def fibFrom(a: Int, b:Int) : Stream[Int] = ???
+  def fibonacciStream(n: Int) = fibFrom(1, 1).take(n).toList.last
+
+  def fibFrom(a: Int, b: Int): Stream[Int] = ???
 
 
   /**
@@ -28,15 +29,31 @@ object Kata {
 
   /**
    * Kata:
-   * 99P1 implement last _not_ using list.last
+   * P01 (*) Find the last element of a list. (Try _not_ using list.last)
+   *
+   * Example:
+   * scala> last(List(1, 1, 2, 3, 5, 8))
+   * res0: Int = 8
    **/
   def last[A](list: List[A]): A = ???
 
   /**
    * Kata:
-   * 99P2 Find the last but one element of a list, _not_ using list.init.last
+   * P02 (*) Find the last but one element of a list,. (Try _not_ using list.init.last)
+   * Example:
+   * scala> penultimate(List(1, 1, 2, 3, 5, 8))
+   * res0: Int = 5
    **/
   def penultimate[A](list: List[A]): A = ???
 
+  /**
+   * Kata:
+   * P03 (*) Find the Kth element of a list.
+   * By convention, the first element in the list is element 0.
+   * Example:
+   *
+   * scala> nth(2, List(1, 1, 2, 3, 5, 8))
+   * res0: Int = 2
+   **/
 
 }
