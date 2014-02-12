@@ -9,18 +9,18 @@ import org.scalatest.FunSuite
 class KataTest extends FunSuite {
 
 //  import solutions.Kata._
-  import kata.Kata._
+    import kata.Kata._
 
   test("factorial") {
-    assert (1 === factorial(0), "factorial of '0'")
-    assert (1 === factorial(1), "factorial of '1'")
-    assert (720 === factorial(6), "factorial of '6'")
+    assert(1 === factorial(0), "factorial of '0'")
+    assert(1 === factorial(1), "factorial of '1'")
+    assert(720 === factorial(6), "factorial of '6'")
   }
 
   test("factorial tailrec") {
-    assert (1 === factorialTailRec(0), "factorial tailrec of '0'")
-    assert (1 === factorialTailRec(1), "factorial tailrec of '1'")
-    assert (720 === factorialTailRec(6), "factorial tailrec of '6'")
+    assert(1 === factorialTailRec(0), "factorial tailrec of '0'")
+    assert(1 === factorialTailRec(1), "factorial tailrec of '1'")
+    assert(720 === factorialTailRec(6), "factorial tailrec of '6'")
   }
 
   test("Fibonacci Stream") {
@@ -32,7 +32,7 @@ class KataTest extends FunSuite {
 
   /**
    * Lists
-   * */
+   **/
   test("last") {
     assert(8 === last(List(1, 1, 2, 3, 5, 8)))
   }
@@ -45,10 +45,14 @@ class KataTest extends FunSuite {
     assert(2 === kth(2, List(1, 1, 2, 3, 5, 8)))
   }
 
-//  test("factorial streams") {
-//    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
-//    assert (1 === factorialStreams(1), "factorial tailrec of '1'")
-//    assert (720 === factorialStreams(6), "factorial tailrec of '6'")
-//  }
+  test("length") {
+    assert(6 === length(List(1, 1, 2, 3, 5, 8)))
+  }
+
+  //  test("factorial streams") {
+  //    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
+  //    assert (1 === factorialStreams(1), "factorial tailrec of '1'")
+  //    assert (720 === factorialStreams(6), "factorial tailrec of '6'")
+  //  }
 
 }
