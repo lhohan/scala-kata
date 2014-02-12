@@ -72,8 +72,8 @@ object Kata {
    * Kata:
    * P03 (*) Find the Kth element of a list.
    * By convention, the first element in the list is element 0. (Try not to use 'built ins' :-)
-   * Example:
    *
+   * Example:
    * scala> kth(2, List(1, 1, 2, 3, 5, 8))
    * res0: Int = 2
    **/
@@ -92,6 +92,31 @@ object Kata {
   def length[A](list: List[A]): Int = list.foldLeft(0) {
     (c, _) => c + 1
   }
+
+  /**
+   * P05 (*) Reverse a list.
+   *         Hint: try varying recursive, tail-recursive or functional.
+   *
+   * Example:
+   * scala> reverse(List(1, 1, 2, 3, 5, 8))
+   * res0: List[Int] = List(8, 5, 3, 2, 1, 1)
+   **/
+  def reverse[A](list:List[A]):List[A] = list.foldLeft(List[A]()){
+    (acc, el) => el :: acc
+  }
+
+//  def reverse[A](list:List[A]):List[A] = {
+//    def reverseAcc(acc:List[A], list:List[A]):List[A] = list match {
+//      case Nil => acc
+//      case h :: tail => reverseAcc(h :: acc, tail)
+//    }
+//    reverseAcc(Nil, list)
+//  }
+
+//  def reverse[A](list:List[A]):List[A] = list match {
+//    case Nil => Nil
+//    case h :: tail => reverse(tail) :+ h
+//  }
 
   // TODO?
   /**

@@ -49,6 +49,10 @@ class KataTest extends FunSuite {
     assert(6 === length(List(1, 1, 2, 3, 5, 8)))
   }
 
+  test("reverse") {
+    assert(List(8, 5, 3, 2, 1, 1) === reverse(List(1, 1, 2, 3, 5, 8)))
+  }
+
   //  test("factorial streams") {
   //    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
   //    assert (1 === factorialStreams(1), "factorial tailrec of '1'")

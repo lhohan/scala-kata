@@ -57,12 +57,25 @@ object Kata {
    **/
   def kth[A](k: Int, list: List[A]): A = ???
 
-  /** P04 (*) Find the number of elements of a list.
-    *
-    * Example:
-    * scala> length(List(1, 1, 2, 3, 5, 8))
-    * res0: Int = 6
-    * */
+  /**
+   * Kata:
+   * P04 (*) Find the number of elements of a list.
+   *
+   * Example:
+   * scala> length(List(1, 1, 2, 3, 5, 8))
+   * res0: Int = 6
+   **/
   def length[A](list: List[A]): Int = ???
+
+  /**
+   * Kata:
+   * P05 (*) Reverse a list.
+   * Hint: try varying recursive, tail-recursive or functional.
+   *
+   * Example:
+   * scala> reverse(List(1, 1, 2, 3, 5, 8))
+   * res0: List[Int] = List(8, 5, 3, 2, 1, 1)
+   **/
+  def reverse[A](list: List[A]): List[A] = ???
 
 }
