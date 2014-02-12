@@ -71,7 +71,7 @@ object Kata {
   /**
    * Kata:
    * P03 (*) Find the Kth element of a list.
-   * By convention, the first element in the list is element 0. (Try not using build in nth.)
+   * By convention, the first element in the list is element 0. (Try not to use 'built ins' :-)
    * Example:
    *
    * scala> kth(2, List(1, 1, 2, 3, 5, 8))
@@ -83,7 +83,7 @@ object Kata {
     case (_, Nil) => throw new NoSuchElementException
   }
 
-  /** P04 (*) Find the number of elements of a list.
+  /** P04 (*) Find the number of elements of a list. (Try not to use 'built ins' :-)
     *
     * Example:
     * scala> length(List(1, 1, 2, 3, 5, 8))
