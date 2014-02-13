@@ -61,6 +61,10 @@ class KataTest extends FunSuite {
     assert(!isPalindrome(List(1, 2, 3, 3, 1)), "isPalindrome 4")
   }
 
+  test("flatten") {
+    assert(List(1, 1, 2, 3, 5, 8) === flatten(List(List(1, 1), 2, List(3, List(5, 8)))))
+  }
+
   //  test("factorial streams") {
   //    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
   //    assert (1 === factorialStreams(1), "factorial tailrec of '1'")
