@@ -9,7 +9,7 @@ import org.scalatest.FunSuite
 class KataTest extends FunSuite {
 
 //  import solutions.Kata._
-    import kata.Kata._
+      import kata.Kata._
 
   test("factorial") {
     assert(1 === factorial(0), "factorial of '0'")
@@ -51,6 +51,14 @@ class KataTest extends FunSuite {
 
   test("reverse") {
     assert(List(8, 5, 3, 2, 1, 1) === reverse(List(1, 1, 2, 3, 5, 8)))
+  }
+
+  test("palindrome") {
+    assert(isPalindrome(List(1, 2, 3, 2, 1)), "isPalindrome 1")
+    assert(isPalindrome(List()), "isPalindrome on empty")
+    assert(isPalindrome(List(1, 2, 2, 2, 1)), "isPalindrome 2")
+    assert(isPalindrome(List(1, 2, 2, 1)), "isPalindrome 3")
+    assert(!isPalindrome(List(1, 2, 3, 3, 1)), "isPalindrome 4")
   }
 
   //  test("factorial streams") {

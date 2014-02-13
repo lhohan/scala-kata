@@ -24,7 +24,6 @@ object Kata {
     factorialAcc(n, 1)
   }
 
-
   /**
    * Streams
    **/
@@ -95,28 +94,39 @@ object Kata {
 
   /**
    * P05 (*) Reverse a list.
-   *         Hint: try varying recursive, tail-recursive or functional.
+   * Hint: try varying recursive, tail-recursive or functional.
    *
    * Example:
    * scala> reverse(List(1, 1, 2, 3, 5, 8))
    * res0: List[Int] = List(8, 5, 3, 2, 1, 1)
    **/
-  def reverse[A](list:List[A]):List[A] = list.foldLeft(List[A]()){
+  def reverse[A](list: List[A]): List[A] = list.foldLeft(List[A]()) {
     (acc, el) => el :: acc
   }
 
-//  def reverse[A](list:List[A]):List[A] = {
-//    def reverseAcc(acc:List[A], list:List[A]):List[A] = list match {
-//      case Nil => acc
-//      case h :: tail => reverseAcc(h :: acc, tail)
-//    }
-//    reverseAcc(Nil, list)
-//  }
+  /**
+   * P06 (*) Find out whether a list is a palindrome.
+   *
+   * Example:
+   * scala> isPalindrome(List(1, 2, 3, 2, 1))
+   * res0: Boolean = true
+   *
+   **/
+  def isPalindrome[A](list: List[A]):Boolean = list == list.reverse
 
-//  def reverse[A](list:List[A]):List[A] = list match {
-//    case Nil => Nil
-//    case h :: tail => reverse(tail) :+ h
-//  }
+
+  //  def reverse[A](list:List[A]):List[A] = {
+  //    def reverseAcc(acc:List[A], list:List[A]):List[A] = list match {
+  //      case Nil => acc
+  //      case h :: tail => reverseAcc(h :: acc, tail)
+  //    }
+  //    reverseAcc(Nil, list)
+  //  }
+
+  //  def reverse[A](list:List[A]):List[A] = list match {
+  //    case Nil => Nil
+  //    case h :: tail => reverse(tail) :+ h
+  //  }
 
   // TODO?
   /**
