@@ -126,6 +126,27 @@ object Kata {
     case el@_ => List(el)
   }
 
+  /**
+   * P08 (**) Eliminate consecutive duplicates of list elements.
+   * If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
+
+   * Example:
+   * scala> compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+   * res0: List[Symbol] = List('a, 'b, 'c, 'a, 'd, 'e)
+   **/
+  def compress[A](list :List[A]) = list.foldRight(List[A]()){
+    (h, acc)  => if(acc.isEmpty || acc.head != h) h :: acc else acc
+  }
+
+  // tail recursive solution:
+//  def compress[A](list :List[A]) = {
+//    def compressAcc(acc :List[A], rest:List[A]):List[A] = rest match {
+//      case Nil => acc.reverse
+//      case h :: tail => compressAcc(h :: acc, tail.dropWhile(_ == h))
+//    }
+//    compressAcc(List[A](), list)
+//  }
+
 
   //  def reverse[A](list:List[A]):List[A] = {
   //    def reverseAcc(acc:List[A], list:List[A]):List[A] = list match {
