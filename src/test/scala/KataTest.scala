@@ -69,6 +69,11 @@ class KataTest extends FunSuite {
     assert(List('a, 'b, 'c, 'a, 'd, 'e) ===  compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
   }
 
+  test("pack") {
+     assert(List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+       ===  pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
+  }
+
   //  test("factorial streams") {
   //    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
   //    assert (1 === factorialStreams(1), "factorial tailrec of '1'")

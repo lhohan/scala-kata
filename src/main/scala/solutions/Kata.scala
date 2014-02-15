@@ -127,6 +127,8 @@ object Kata {
   }
 
   /**
+   * Kata:
+   *
    * P08 (**) Eliminate consecutive duplicates of list elements.
    * If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
 
@@ -134,18 +136,40 @@ object Kata {
    * scala> compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
    * res0: List[Symbol] = List('a, 'b, 'c, 'a, 'd, 'e)
    **/
-  def compress[A](list :List[A]) = list.foldRight(List[A]()){
-    (h, acc)  => if(acc.isEmpty || acc.head != h) h :: acc else acc
+  def compress[A](list: List[A]) = list.foldRight(List[A]()) {
+    (h, acc) => if (acc.isEmpty || acc.head != h) h :: acc else acc
+  }
+
+  /**
+   * Kata:
+   *
+   * P09 (**) Pack consecutive duplicates of list elements into sublists.
+   * If a list contains repeated elements they should be placed in separate
+   * sublists.
+
+   * Example:
+   * scala> pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+   * res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+   */
+  def pack[A](ls: List[A]): List[List[A]] = {
+    if (ls.isEmpty) List(List())
+    else {
+      val (packed, next) = ls span {
+        _ == ls.head
+      }
+      if (next == Nil) List(packed)
+      else packed :: pack(next)
+    }
   }
 
   // tail recursive solution:
-//  def compress[A](list :List[A]) = {
-//    def compressAcc(acc :List[A], rest:List[A]):List[A] = rest match {
-//      case Nil => acc.reverse
-//      case h :: tail => compressAcc(h :: acc, tail.dropWhile(_ == h))
-//    }
-//    compressAcc(List[A](), list)
-//  }
+  //  def compress[A](list :List[A]) = {
+  //    def compressAcc(acc :List[A], rest:List[A]):List[A] = rest match {
+  //      case Nil => acc.reverse
+  //      case h :: tail => compressAcc(h :: acc, tail.dropWhile(_ == h))
+  //    }
+  //    compressAcc(List[A](), list)
+  //  }
 
 
   //  def reverse[A](list:List[A]):List[A] = {
