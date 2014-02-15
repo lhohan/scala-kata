@@ -104,6 +104,20 @@ object Kata {
     (acc, el) => el :: acc
   }
 
+
+  //  def reverse[A](list:List[A]):List[A] = {
+  //    def reverseAcc(acc:List[A], list:List[A]):List[A] = list match {
+  //      case Nil => acc
+  //      case h :: tail => reverseAcc(h :: acc, tail)
+  //    }
+  //    reverseAcc(Nil, list)
+  //  }
+
+  //  def reverse[A](list:List[A]):List[A] = list match {
+  //    case Nil => Nil
+  //    case h :: tail => reverse(tail) :+ h
+  //  }
+
   /**
    * P06 (*) Find out whether a list is a palindrome.
    *
@@ -140,6 +154,16 @@ object Kata {
     (h, acc) => if (acc.isEmpty || acc.head != h) h :: acc else acc
   }
 
+  // tail recursive solution:
+  //  def compress[A](list :List[A]) = {
+  //    def compressAcc(acc :List[A], rest:List[A]):List[A] = rest match {
+  //      case Nil => acc.reverse
+  //      case h :: tail => compressAcc(h :: acc, tail.dropWhile(_ == h))
+  //    }
+  //    compressAcc(List[A](), list)
+  //  }
+
+
   /**
    * Kata:
    *
@@ -160,28 +184,6 @@ object Kata {
     }
   }
 
-  // tail recursive solution:
-  //  def compress[A](list :List[A]) = {
-  //    def compressAcc(acc :List[A], rest:List[A]):List[A] = rest match {
-  //      case Nil => acc.reverse
-  //      case h :: tail => compressAcc(h :: acc, tail.dropWhile(_ == h))
-  //    }
-  //    compressAcc(List[A](), list)
-  //  }
-
-
-  //  def reverse[A](list:List[A]):List[A] = {
-  //    def reverseAcc(acc:List[A], list:List[A]):List[A] = list match {
-  //      case Nil => acc
-  //      case h :: tail => reverseAcc(h :: acc, tail)
-  //    }
-  //    reverseAcc(Nil, list)
-  //  }
-
-  //  def reverse[A](list:List[A]):List[A] = list match {
-  //    case Nil => Nil
-  //    case h :: tail => reverse(tail) :+ h
-  //  }
 
   // TODO?
   /**
