@@ -77,6 +77,9 @@ class KataTest extends FunSuite with Checkers {
       === pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
   }
 
+  /**
+   * TODO: move out to different kind of kata
+   * */
   test("fizzbuzz") {
     val fb = fizzbuzz(100)
     val range = Gen.choose[Int](1, 100)
