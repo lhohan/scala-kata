@@ -1,15 +1,18 @@
 
 
+import org.scalacheck.Gen
 import org.scalatest.FunSuite
+import org.scalacheck.Prop.{forAll}
+import org.scalatest.prop.Checkers
 
 /**
  * User: hanlho
  * DateTime: 9/02/14 12:26
  */
-class KataTest extends FunSuite {
+class KataTest extends FunSuite with Checkers {
 
 //  import solutions.Kata._
-      import kata.Kata._
+        import kata.Kata._
 
   test("factorial") {
     assert(1 === factorial(0), "factorial of '0'")
@@ -66,18 +69,26 @@ class KataTest extends FunSuite {
   }
 
   test("compress") {
-    assert(List('a, 'b, 'c, 'a, 'd, 'e) ===  compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
+    assert(List('a, 'b, 'c, 'a, 'd, 'e) === compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
   }
 
   test("pack") {
-     assert(List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
-       ===  pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
+    assert(List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+      === pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
   }
 
-  //  test("factorial streams") {
-  //    assert (1 === factorialStreams(0), "factorial tailrec of '0'")
-  //    assert (1 === factorialStreams(1), "factorial tailrec of '1'")
-  //    assert (720 === factorialStreams(6), "factorial tailrec of '6'")
-  //  }
+  test("fizzbuzz") {
+    val fb = fizzbuzz(100)
+    val range = Gen.choose[Int](1, 100)
+    val fizzProperty = forAll(range) {
+      n =>
+        if (n % 15 == 0) fb(n - 1) == "FizzBuzz" else
+        if (n % 5 == 0) fb(n - 1) == "Buzz" else
+        if (n % 3 == 0) fb(n - 1) == "Fizz" else
+          fb(n - 1) == n.toString
+
+    }
+    check(fizzProperty)
+  }
 
 }

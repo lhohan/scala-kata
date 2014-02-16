@@ -122,4 +122,13 @@ object Kata {
    */
   def pack[A](ls: List[A]): List[List[A]] = ???
 
+  /**
+   * Kata: Fizzbuzz
+   *
+   * Write a function that returns the list numbers from 1 to 100. But for multiples of three replace the number by "Fizz" instead of the
+   * number and for the multiples of five replace by "Buzz". For numbers which are multiples of both three and
+   * five use "FizzBuzz".
+   */
+  def fizzbuzz(s: Int): List[String] = ???
+
 }

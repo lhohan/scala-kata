@@ -42,7 +42,6 @@ object Kata {
    **/
   def factorialStreams(n: Int): Int = ???
 
-
   /**
    * Working with lists
    **/
@@ -184,13 +183,24 @@ object Kata {
     }
   }
 
-
-  // TODO?
   /**
    * Kata: Fizzbuzz
-   * Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the
-   * number and for the multiples of five print "Buzz". For numbers which are multiples of both three and
-   * five print "FizzBuzz".
+   *
+   * Write a function that returns the list numbers from 1 to 100. But for multiples of three replace the number by "Fizz" instead of the
+   * number and for the multiples of five replace by "Buzz". For numbers which are multiples of both three and
+   * five use "FizzBuzz".
    */
+  def fizzbuzz(s: Int): List[String] = {
+
+    def wordFor(i: Int): String =
+      if (i % 15 == 0) "FizzBuzz" else
+      if (i % 3 == 0) "Fizz" else
+      if (i % 5 == 0) "Buzz" else
+        i.toString
+
+    val fb: Stream[String] = Stream.from(1).map(i => wordFor(i))
+
+    (fb take s).toList
+  }
 
 }
