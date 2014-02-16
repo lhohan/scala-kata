@@ -83,7 +83,7 @@ class KataTest extends FunSuite with Checkers {
   test("fizzbuzz") {
     val fb = fizzbuzz(100)
     val range = Gen.choose[Int](1, 100)
-    val fizzProperty = forAll(range) {
+    val fizzbuzzProperty = forAll(range) {
       n =>
         if (n % 15 == 0) fb(n - 1) == "FizzBuzz" else
         if (n % 5 == 0) fb(n - 1) == "Buzz" else
@@ -91,7 +91,7 @@ class KataTest extends FunSuite with Checkers {
           fb(n - 1) == n.toString
 
     }
-    check(fizzProperty)
+    check(fizzbuzzProperty)
   }
 
 }
