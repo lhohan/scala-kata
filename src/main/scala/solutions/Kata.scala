@@ -184,6 +184,18 @@ object Kata {
   }
 
   /**
+   * Kata:
+   *
+   * P10 (*) Run-length encoding of a list.
+   * Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as tuples (N, E) where N is the number of duplicates of the element E.
+   * Example:
+
+   * scala> encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+   * res0: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+   */
+  def encode[A](list: List[A]): List[(Int, A)] = pack(list).map(x => (x.length, x.head))
+
+  /**
    * Kata: Fizzbuzz
    *
    * Write a function that returns the list numbers from 1 to 100. But for multiples of three replace the number by "Fizz" instead of the
@@ -193,9 +205,12 @@ object Kata {
   def fizzbuzz(s: Int): List[String] = {
 
     def wordFor(i: Int): String =
-      if (i % 15 == 0) "FizzBuzz" else
-      if (i % 3 == 0) "Fizz" else
-      if (i % 5 == 0) "Buzz" else
+      if (i % 15 == 0) "FizzBuzz"
+      else
+      if (i % 3 == 0) "Fizz"
+      else
+      if (i % 5 == 0) "Buzz"
+      else
         i.toString
 
     val fb: Stream[String] = Stream.from(1).map(i => wordFor(i))

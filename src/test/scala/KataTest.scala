@@ -2,7 +2,7 @@
 
 import org.scalacheck.Gen
 import org.scalatest.FunSuite
-import org.scalacheck.Prop.{forAll}
+import org.scalacheck.Prop.forAll
 import org.scalatest.prop.Checkers
 
 /**
@@ -11,8 +11,8 @@ import org.scalatest.prop.Checkers
  */
 class KataTest extends FunSuite with Checkers {
 
-//  import solutions.Kata._
-        import kata.Kata._
+//    import solutions.Kata._
+  import kata.Kata._
 
   test("factorial") {
     assert(1 === factorial(0), "factorial of '0'")
@@ -77,17 +77,25 @@ class KataTest extends FunSuite with Checkers {
       === pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
   }
 
+  test("encode") {
+    assert(List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))
+      === encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
+  }
+
   /**
    * TODO: move out to different kind of kata
-   * */
+   **/
   test("fizzbuzz") {
     val fb = fizzbuzz(100)
     val range = Gen.choose[Int](1, 100)
     val fizzbuzzProperty = forAll(range) {
       n =>
-        if (n % 15 == 0) fb(n - 1) == "FizzBuzz" else
-        if (n % 5 == 0) fb(n - 1) == "Buzz" else
-        if (n % 3 == 0) fb(n - 1) == "Fizz" else
+        if (n % 15 == 0) fb(n - 1) == "FizzBuzz"
+        else
+        if (n % 5 == 0) fb(n - 1) == "Buzz"
+        else
+        if (n % 3 == 0) fb(n - 1) == "Fizz"
+        else
           fb(n - 1) == n.toString
 
     }
