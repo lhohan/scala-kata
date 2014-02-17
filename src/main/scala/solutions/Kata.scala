@@ -3,6 +3,7 @@ package solutions
 import scala.annotation.tailrec
 import java.util.NoSuchElementException
 import scala.NoSuchElementException
+import scala.reflect.ClassTag
 
 object Kata {
 
@@ -99,9 +100,9 @@ object Kata {
    * scala> reverse(List(1, 1, 2, 3, 5, 8))
    * res0: List[Int] = List(8, 5, 3, 2, 1, 1)
    **/
-  def reverse[A](list: List[A]): List[A] = list.foldLeft(List[A]()) {
-    (acc, el) => el :: acc
-  }
+    def reverse[A](list: List[A]): List[A] = list.foldLeft(List[A]()) {
+      (acc, el) => el :: acc
+    }
 
 
   //  def reverse[A](list:List[A]):List[A] = {
@@ -116,6 +117,21 @@ object Kata {
   //    case Nil => Nil
   //    case h :: tail => reverse(tail) :+ h
   //  }
+
+//  Ugly using a while loop.
+//  def reverse[A: ClassTag](list: List[A]): List[A] = {
+//    val arr = list.toArray[A]
+//    val size = arr.size
+//    val last = size - 1
+//    var i = 0
+//    while (i < size / 2) {
+//      val c = arr(i)
+//      arr(i) = arr(last - i)
+//      arr(last - i) = c
+//      i = i + 1
+//    }
+//    arr.toList
+//  }
 
   /**
    * P06 (*) Find out whether a list is a palindrome.
