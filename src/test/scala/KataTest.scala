@@ -82,6 +82,12 @@ class KataTest extends FunSuite with Checkers {
       === encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
   }
 
+  test("encodeModified") {
+     assert(List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+       === encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
+  }
+
+
   /**
    * TODO: move out to different kind of kata
    **/

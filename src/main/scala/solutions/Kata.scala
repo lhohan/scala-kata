@@ -100,9 +100,9 @@ object Kata {
    * scala> reverse(List(1, 1, 2, 3, 5, 8))
    * res0: List[Int] = List(8, 5, 3, 2, 1, 1)
    **/
-    def reverse[A](list: List[A]): List[A] = list.foldLeft(List[A]()) {
-      (acc, el) => el :: acc
-    }
+  def reverse[A](list: List[A]): List[A] = list.foldLeft(List[A]()) {
+    (acc, el) => el :: acc
+  }
 
 
   //  def reverse[A](list:List[A]):List[A] = {
@@ -118,20 +118,20 @@ object Kata {
   //    case h :: tail => reverse(tail) :+ h
   //  }
 
-//  Ugly using a while loop.
-//  def reverse[A: ClassTag](list: List[A]): List[A] = {
-//    val arr = list.toArray[A]
-//    val size = arr.size
-//    val last = size - 1
-//    var i = 0
-//    while (i < size / 2) {
-//      val c = arr(i)
-//      arr(i) = arr(last - i)
-//      arr(last - i) = c
-//      i = i + 1
-//    }
-//    arr.toList
-//  }
+  //  Ugly using a while loop.
+  //  def reverse[A: ClassTag](list: List[A]): List[A] = {
+  //    val arr = list.toArray[A]
+  //    val size = arr.size
+  //    val last = size - 1
+  //    var i = 0
+  //    while (i < size / 2) {
+  //      val c = arr(i)
+  //      arr(i) = arr(last - i)
+  //      arr(last - i) = c
+  //      i = i + 1
+  //    }
+  //    arr.toList
+  //  }
 
   /**
    * P06 (*) Find out whether a list is a palindrome.
@@ -210,6 +210,19 @@ object Kata {
    * res0: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
    */
   def encode[A](list: List[A]): List[(Int, A)] = pack(list).map(x => (x.length, x.head))
+
+  /**
+   * Kata:
+   *
+   * P11 (*) Modified run-length encoding.
+   * Modify the result of problem P10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are transferred as (N, E) terms.
+   * Example:
+
+   * scala> encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+   * res0: List[Any] = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+   **/
+  def encodeModified[A](list: List[A]): List[Any] =
+    encode(list).map(p => if (p._1 == 1) p._2 else p)
 
   /**
    * Kata: Fizzbuzz
