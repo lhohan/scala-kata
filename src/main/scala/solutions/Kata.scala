@@ -239,6 +239,16 @@ object Kata {
     x => List.fill[A](x._1)(x._2)
   }
 
+
+  /**
+   * Implement a parenthesises balancing function returning true if brackets match, false if not.
+   *
+   * Example:
+   * (if (zero? x) max (/ 1 x)) is balanced
+   * if (zero? x) max (/ 1 x)) is not
+   **/
+  def balance(chars: List[Char]): Boolean = ??? // solution not provided
+
   /**
    * Kata: Fizzbuzz
    *

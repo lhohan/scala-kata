@@ -92,6 +92,13 @@ class KataTest extends FunSuite with Checkers {
         decode(List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))))
   }
 
+  test("balance") {
+    assert(balance("(if (zero? x) max (/ 1 x))".toList), "balance: '(if (zero? x) max (/ 1 x))' is balanced")
+    assert(balance("I told him (that it's not (yet) done).\n(But he wasn't listening)".toList), "balance: 'I told him ...' is balanced")
+    assert(!balance(":-)".toList), "balance: ':-)' is unbalanced")
+    assert(!balance("())(".toList), "balance: counting is not enough")
+  }
+
   /**
    * TODO: move out to different kind of kata
    **/

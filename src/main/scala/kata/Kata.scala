@@ -159,6 +159,14 @@ object Kata {
    **/
   def decode[A](list: List[(Int, A)]): List[A] = ???
 
+  /**
+   * Implement a parenthesises balancing function returning true if brackets match, false if not.
+   *
+   * Example:
+   * (if (zero? x) max (/ 1 x)) is balanced
+   * if (zero? x) max (/ 1 x)) is not
+   **/
+  def balance(chars: List[Char]): Boolean = ???
 
   /**
    * Kata: Fizzbuzz
