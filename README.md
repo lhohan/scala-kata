@@ -18,7 +18,7 @@ Note: the tests will probably be quite basic and it is not their intention to te
 
 How to
 ------
-Pre-requisite: you will need to have [sbt](http://www.scala-sbt.org/) installed.
+Only pre-requisite: you will need to have [sbt](http://www.scala-sbt.org/) installed.
 
   * clone this project
   * go to the kata project
