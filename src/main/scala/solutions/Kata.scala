@@ -249,6 +249,30 @@ object Kata {
    **/
   def balance(chars: List[Char]): Boolean = ??? // solution not provided
 
+  //TODO Move
+  /**
+   * Higher order functions.
+   **/
+  /**
+   * Kata:
+   *
+   * Implement an unless function that will keep on executing a block of code
+   * unless a condition is met. (Note the arguments being passed by name.)
+   *
+   * Example:
+   * var x = 1
+      unless(x > 5) {
+        x += 1
+      }
+   **/
+  def unless(condition: => Boolean)(block: => Unit) {
+    if (!condition) {
+      block
+      unless(condition)(block)
+    }
+  }
+
+
   /**
    * Kata: Fizzbuzz
    *

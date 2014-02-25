@@ -160,6 +160,8 @@ object Kata {
   def decode[A](list: List[(Int, A)]): List[A] = ???
 
   /**
+   * Kata:
+   *
    * Implement a parenthesises balancing function returning true if brackets match, false if not.
    *
    * Example:
@@ -167,6 +169,26 @@ object Kata {
    * if (zero? x) max (/ 1 x)) is not
    **/
   def balance(chars: List[Char]): Boolean = ???
+
+  //TODO Move
+  /**
+   * Higher order functions.
+   * */
+  /**
+   * Kata:
+   *
+   * Implement an unless function that will keep on executing a block of code
+   * unless a condition is met. (Note the arguments being passed by name.)
+   *
+   * Example:
+   * var x = 1
+      unless(x > 5) {
+        x += 1
+      }
+   **/
+  def unless(condition: => Boolean)(block: => Unit)= ???
+
+  // TODO Move
 
   /**
    * Kata: Fizzbuzz

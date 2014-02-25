@@ -99,6 +99,18 @@ class KataTest extends FunSuite with Checkers {
     assert(!balance("())(".toList), "balance: counting is not enough")
   }
 
+
+  /**
+   * Higher order functions
+   * */
+  test("unless") {
+    var x = 1
+    unless(x > 5) {
+      x += 1
+    }
+    assert(6 === x)
+  }
+
   /**
    * TODO: move out to different kind of kata
    **/
