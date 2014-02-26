@@ -11,8 +11,8 @@ import org.scalatest.prop.Checkers
  */
 class KataTest extends FunSuite with Checkers {
 
-    import solutions.Kata._
-//  import kata.Kata._
+//    import solutions.Kata._
+  import kata.Kata._
 
   test("factorial") {
     assert(1 === factorial(0), "factorial of '0'")
