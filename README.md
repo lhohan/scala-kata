@@ -21,8 +21,9 @@ How to
 Only pre-requisite: you will need to have [sbt](http://www.scala-sbt.org/) installed.
 
   * clone this project
-  * go to the kata project
-  * start 'sbt'
+  * start 'sbt' in project directory
+  * 'projects' will show all available katas
+  * you can choose to run all kata or switch to a specific kata project, e.g. 'project kata01'
   * run '~test'
   * all tests will be failing --> make them pass :-)
   * open up class kata.Kata in src/main/scala in your favorite IDE or editor
