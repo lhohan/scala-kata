@@ -1,9 +1,7 @@
 package solutions
 
 import scala.annotation.tailrec
-import java.util.NoSuchElementException
 import scala.NoSuchElementException
-import scala.reflect.ClassTag
 
 object Kata {
 
