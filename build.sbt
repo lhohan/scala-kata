@@ -17,4 +17,6 @@ def KataProject(name: String): Project = (
 
 lazy val kata01 = KataProject("kata01")
 
+lazy val kata02 = KataProject("kata02")
+
 

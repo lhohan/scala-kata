@@ -1,0 +1,5 @@
+package kata
+
+object Kata {
+
+}
